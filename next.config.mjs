@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-};
 
-export default nextConfig;
+import transpileModules from "next-transpile-modules";
+
+const withTM = transpileModules(["@suprsend/react-inbox"]);
+
+export default withTM({
+  reactStrictMode: true,
+  experimental: {
+    esmExternals: "loose",
+  },
+});
