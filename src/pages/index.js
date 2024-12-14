@@ -4,10 +4,13 @@ const SuprSendInbox = dynamic(() => import("@suprsend/react-inbox"), {
   ssr: false,
 });
 
+import HeadlessSDKComponent from "./HeadlessSDKComponent";
+
 export default function Home() {
   return (
     <>
       <SuprSendInbox workspaceKey="" subscriberId="" distinctId="" />
+      <HeadlessSDKComponent />
     </>
   );
 }
